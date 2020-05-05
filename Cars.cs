@@ -53,11 +53,19 @@ public class Program
       } 
     }
     
-    foreach (Car automobile in CarsMatchingSearch)
+    if (CarsMatchingSearch.Count > 0)
+    {
+      foreach (Car automobile in CarsMatchingSearch)
+      {
+        Console.WriteLine("------------");
+        Console.WriteLine(automobile.MakeModel + ": $" + automobile.Price);
+        Console.WriteLine(automobile.Message);
+      }
+    }
+    else 
     {
       Console.WriteLine("------------");
-      Console.WriteLine(automobile.MakeModel + ": $" + automobile.Price);
-      Console.WriteLine(automobile.Message);
+      Console.WriteLine("There are no cars matching your search :(");
     }
   }
 }
